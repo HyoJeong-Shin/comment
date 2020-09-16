@@ -1,4 +1,10 @@
-{% extends 'base.html' %} {% block content %} {% for post in blogs.all %}
+{% extends 'base.html' %} {% block content %} 
+
+{% if request.user.is_authenticated %}  <!-- 만약 로그인이 되어있는 상태이면-->
+          <h1>환영합니다, {{ user.username }}님!</h1>
+{% endif%}
+
+{% for post in blogs.all %}
 <div class="home">
   <h3><a href="{% url 'detail' post.pk %}">{{post.title}}</a></h3>
   <p class="preview">[미리 보기]</p>

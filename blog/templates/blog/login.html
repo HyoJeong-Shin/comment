@@ -1,0 +1,72 @@
+{% extends 'base.html' %} {% block content %}
+
+{% load socialaccount %}
+{% providers_media_js %}
+
+<style>
+    #btn_login_naver{
+    background-color: white;
+    color: #2DB400;
+    border: 1px solid #2DB400;
+    border-radius: 5px;
+    font-size: 12pt;
+    }
+
+    #btn_login_naver:hover {
+    background-color: #2DB400;
+    color: white;
+    border: 1px solid #2DB400;
+    }
+
+    #btn_signup {
+    background-color: white;
+    color: #483D8B;
+    border: 1px solid #483D8B;
+    border-radius: 5px;
+    font-size: 12pt;
+    }
+
+    #btn_signup:hover {
+    background-color: #483D8B;
+    color: white;
+    border: 1px solid #483D8B;
+    }
+</style>
+
+<h1>Login</h1>
+
+<form method="POST" action="{%url 'login' %}">
+    {% csrf_token %}
+
+    Username:
+    <br>
+    <br>
+    <input name="username" type="text" value="">
+    <br>
+    Password:
+    <br>
+    <br>
+    <input name="password" type="password" value="">
+    <br>
+    <br>
+    <br>
+    <input type="submit" value="Login">
+</form>
+
+<br>
+<a href="{% url 'signup' %}">
+    <button type="button" id='btn_signup'>
+        Signup
+    </button>
+</a>
+<br>
+<br>
+<a href="{% provider_login_url 'naver' %}">
+    <button type="button" id='btn_login_naver'>
+        네이버로 로그인하기
+    </button>
+</a>
+
+
+
+{% endblock %}
