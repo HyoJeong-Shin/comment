@@ -43,6 +43,8 @@
 <hr/>
 <h3>작성 위치</h3>
 <div id="map" style="width:auto;height:300px;"></div>
+<br>
+<br>
 
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ea3a2451147e01d622ff182a5480e177&libraries=services"></script>
     <script>
@@ -62,7 +64,7 @@
 
         var geocoder = new kakao.maps.services.Geocoder();
 
-        geocoder.addressSearch('서울특별시 도봉구 삼양로 144길 33 덕성여자대학교', function(result, status){
+        geocoder.addressSearch('서울특별시 노원구 노원로 58', function(result, status){
 
             if(status === kakao.maps.services.Status.OK){
 
@@ -74,7 +76,7 @@
                 });
 
                 var infowindow = new kakao.maps.InfoWindow({
-                    content: '<div style="width:150px;text-align:center;padding:6px 0;">덕성여대</div>'
+                    content: '<div style="width:150px;text-align:center;padding:6px 0;">노원구 공릉2동</div>'
                 });
                 infowindow.open(map, marker);
 
