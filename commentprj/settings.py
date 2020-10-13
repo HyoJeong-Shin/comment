@@ -25,7 +25,7 @@ SECRET_KEY = ')oo-=rs&g$mq^tx8hr2%yebj7%kc8tt6(c8nrlfla9g#+=ty=s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kongnamu-env.eba-5rrgvgj6.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['*','kongnamu-env.eba-5rrgvgj6.us-west-2.elasticbeanstalk.com',]
 
 
 # Application definition
@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'commentprj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
